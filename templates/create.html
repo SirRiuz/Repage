@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% load static %}
+
+
+    <div class="container">
+        <h1>Create page</h1>
+        <form id='form-page-creator'>
+            <input type="text" name="pagename"/><br/><br/>
+            <button id='btn-sub' type="submit">Create paina</button>
+        </form>
+        
+        <div id='error-messege'></div>
+
+    </div>
+
+
+    <script src="{% static 'page.js' %}" ></script>
+    
+{% endblock %}

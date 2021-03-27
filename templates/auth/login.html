@@ -1,0 +1,31 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+	{% load static %}
+
+	<div class='container'>
+		<form id="form-auth">
+			
+
+			<div class="field">
+				<label class="label">User name</label>
+				<div class="control">
+					<input class="input" type="text" name='nickname'>
+				</div>
+			</div>
+
+			<div class="field">
+				<label class="label">Password</label>
+				<div class="control">
+					<input class="input" type="password" name='password'>
+				</div>
+			</div>
+			<button type="submit" id='btn-sub'>Login</button>
+		</form>
+	</div>
+		
+	<script src="{% static '/auth/login.js' %}" ></script>
+
+{% endblock %}

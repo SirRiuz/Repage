@@ -1,0 +1,25 @@
+
+
+.menu-container{ 
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.08);
+    position: absolute;
+    width: 160px;
+    z-index: 999999999999999;
+    display:none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.item{
+    padding:1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.item:hover{
+    background:rgba(0,0,0,0.03);
+}

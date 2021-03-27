@@ -1,0 +1,111 @@
+
+body{
+    padding:10px;
+    margin: 0px;
+    background: white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: flex-start;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#menu{
+    padding-left: 40px;
+    width: 22px;
+    height:22px;
+}
+
+.aplication-file {
+    background: white;
+    border-radius: 10px;
+    padding:8px;
+}
+
+.vector-img{
+    width: 25px;
+    height: 25px;
+}
+
+.aplication-file-item{
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.info-panel{
+    background: white;
+    border-radius: 10px;
+    padding:25px;
+    height: 300px;
+}
+
+.panel-btn-file-manager{
+    border-radius: 10px;
+    background: white;
+    height: 65px;
+}
+
+
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+
+.aplication-file-item:hover {
+    background: #FAFAFA;
+    cursor: pointer;
+    text-decoration: none;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+
+
+.create-file-modal{
+    margin: 0px;
+    background: rgba(0,0,0,0.3);
+    position:absolute;
+    z-index: 9999999;
+    height: 100%;
+    display: none;
+    width: 100%;
+    top:0px;
+    left:0px;
+    overflow: hidden;
+}
+
+
+.modal-fcontainer{
+    padding:10px;
+    border-radius: 10px;
+    background:white;
+    height: 500px;
+}
+
+
+#subtitle{
+    font-size: 14px;
+    color:rgba(0,0,0,0.5);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .info-panel{
+        display:none
+    }
+  }

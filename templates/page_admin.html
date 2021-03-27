@@ -1,0 +1,99 @@
+
+{% extends 'base.html' %}
+
+
+{% block header %}
+
+    {% load static %}
+
+    <link rel="stylesheet" href=" {% static '/css/filecontainer.css' %} ">
+    <link rel="stylesheet" href=" {% static '/css/manuOptions.css' %} ">
+    <link rel="stylesheet" href=" {% static '/css/editor.css' %} ">
+    <link rel="stylesheet" href=" {% static '/css/modalFile.css' %} ">
+    <link rel="stylesheet" href=" {% static '/css/appbar.css' %} ">    
+
+{% endblock %}
+
+{% block content %}
+	{% load static %}
+    
+    <div class="app-bar">
+        
+    </div>
+
+    <div class='row'>
+        <div class="col-md-3 col-xs-0 col-sm-0"></div>
+        <div class="col-md-5 col-xs-12 col-sm-7">
+            <div class="box">
+                <br/>
+                <br/><br/><br/>
+
+                <div class="panel-btn-file-manager">
+                    <a>Delete page</a>
+                    <a id='create-file-btn'>Create file</a>
+                    <a id='create-dir-btn' >Create dir</a>
+                </div>
+
+                <br/>
+                <div id="root"></div>
+                <div class='aplication-file' id='aplication-file-container'>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-xs-0 col-sm-4">
+            <div class="box">
+                <br/><br/><br/><br/>
+                <div class="info-panel">
+                    info
+                </div>
+            </div>
+        </div>
+
+        <div class="create-file-modal" id="create-file-modal">
+            <div class="row" id="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-5">
+                    <div class="box modal-fcontainer">
+                        <form id='file-form'>
+                            <input type='text'/>
+                            <button type="submit" id="btn-create-file">Crear</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+
+        <div class="modal-upload-file" id="modal-upload-file">
+            <div class="modal-container">
+                <form id="upload-form-file" enctype="multipart/form-data">
+                    <input type='file' multiple/>
+                    <button>Subir archivo</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <br/><br/>
+
+
+    <div class="menu-container" id="menu-op-popup">
+        <div class="item">
+            <p>Abrir archivo</p>
+        </div>
+        <div class="item">
+            <p>Renombrar</p>
+        </div>
+        <div class="item">
+            <p>Eliminar archivo</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/codeflask/build/codeflask.min.js" ></script>
+    <script src=" {% static 'pageAdmin.js' %} " ></script>
+    <script src=" {% static 'menuManager.js' %} " ></script>
+    <script src=" {% static 'uploadManager.js' %} " ></script>
+    <script src=" {% static 'itemRouter.js' %} " ></script>
+
+
+{% endblock %}
