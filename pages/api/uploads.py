@@ -47,7 +47,7 @@ class FileUploadManager(APIView):
 		"""
 		if kwargs['pageObject'].user == kwargs['user']:
 			for fileItem in kwargs['files']:
-				tempFileDir = MEDIA_DIR+kwargs['pageObject'].namespace+'\\'+kwargs['path']+'\\'+kwargs['files'][fileItem].name
+				tempFileDir = MEDIA_DIR+kwargs['pageObject'].namespace+'/'+kwargs['path']+'/'+kwargs['files'][fileItem].name
 				file = open(tempFileDir,'wb')
 				file.write(kwargs['files'][fileItem].read())
 				file.close()
@@ -75,7 +75,7 @@ class FileUploadManager(APIView):
 			pageObject=self.__getPageObject(page),
 			user=user,
 			files=fileMap,
-			path=str(path).replace('/','\\')
+			path=str(path).replace('/','/')			# Arreglar esto ...
 		)
 
 		if result:

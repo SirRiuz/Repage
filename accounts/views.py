@@ -15,7 +15,7 @@ from .serializers import AuthSerailizer
 
 class AuthManager(APIView):
 
-    def post(self, request) -> (Response):
+    def post(self,request,mode=None) -> (Response):
         serializer = AuthSerailizer(data=request.data)
         serializer.is_valid(raise_exception=True)
         atuData = serializer.auth(
@@ -28,7 +28,7 @@ class AuthManager(APIView):
 
 class RegisterManager(APIView):
 
-	def post(self,request,mode=None) -> (Response):
+	def post(self,request) -> (Response):
 		mode = mode
 		return Response('REGISTER !!!')
 

@@ -28,7 +28,7 @@ class FileApiManager(APIView):
         path = path.replace('/v1/file/','')
         path = path.split('?')
         path = path[0]
-        path = path.replace('/','\\')
+        path = path.replace('/','/')    # Arreglar esto
         return path
 
     def __getPageObjectModel(self,pageName) -> (object):
@@ -47,7 +47,7 @@ class FileApiManager(APIView):
 
         if len(query) > 0:
             query = query[0]
-            absolutePath = MEDIA_DIR+query.namespace+'\\'+path.replace('%20',' ')
+            absolutePath = MEDIA_DIR+query.namespace+'/'+path.replace('%20',' ')
             print('path -> '+path.replace('%20',' '))
 
             if os.path.exists(absolutePath):
@@ -104,7 +104,7 @@ class FileApiManager(APIView):
 
         if resultObject:
             namespace = resultObject.namespace
-            MEDIA_BASE_DIR = MEDIA_DIR + namespace + '\\' + path
+            MEDIA_BASE_DIR = MEDIA_DIR + namespace + '/' + path
             
             if os.path.exists(MEDIA_BASE_DIR):
                 if os.path.isdir(MEDIA_BASE_DIR):
@@ -160,7 +160,7 @@ class FileApiManager(APIView):
         serializer.is_valid(raise_exception=True)
 
         if page:
-            MEDIA_BASE_DIR = MEDIA_DIR + page.namespace + '\\' + path
+            MEDIA_BASE_DIR = MEDIA_DIR + page.namespace + '/' + path
             if not os.path.isdir(MEDIA_BASE_DIR) and os.path.exists(MEDIA_BASE_DIR):
                 fileName = serializer.data['fileName']
                 content = serializer.data['content']

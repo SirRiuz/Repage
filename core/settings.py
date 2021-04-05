@@ -17,7 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-MEDIA_DIR = str(BASE_DIR) + '\\' + 'media' + '\\'
+MEDIA_DIR = str(BASE_DIR) + '/' + 'media' + '/'
 
 
 ROOT_HOSTCONF = 'core.hosts'
@@ -72,7 +72,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ str(BASE_DIR)+'\\templates' ],
+        'DIRS': [ str(BASE_DIR)+'/templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -149,8 +149,8 @@ AUTH_USER_MODEL = 'accounts.User'
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media\\')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static\\') ]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR,'static/') ]

@@ -33,7 +33,7 @@ class CustomPageManager(models.Manager):
             isAcces=kwargs.get('isAcces',True)
         )
         pageObject.save(using=self._db)
-        os.mkdir(str(BASE_DIR)+'\\media\\'+pageObject.namespace+'\\')
+        os.mkdir(str(BASE_DIR)+'/media/'+pageObject.namespace+'/')
         return pageObject
 
 
@@ -55,7 +55,7 @@ class Page(models.Model):
 
     def delete(self):
         super().delete()
-        namespaceDir = str(BASE_DIR)+'\\media\\'+self.namespace
+        namespaceDir = str(BASE_DIR)+'/media/'+self.namespace
         if os.path.exists(namespaceDir):
             shutil.rmtree(namespaceDir)
             os.rmdir(namespaceDir)

@@ -16,7 +16,7 @@ class PageController(object):
     def __getNotFountError(self,request) -> (HttpResponse):
         path = str(request.get_full_path())
         host_name = str(request.get_host()).split('.')[0]
-        error_file = str(BASE_DIR)+'\\media\\'+'404.html'
+        error_file = str(BASE_DIR)+'/media/'+'404.html'
 
 
         if os.path.exists(error_file):
@@ -43,7 +43,7 @@ class PageController(object):
     def getPageByNamespace(self,request,namespace) -> (HttpResponse):
         browser_path = str(request.get_full_path())
         if not self.__isNotFountPage(browser_path):
-            file_path = str(BASE_DIR)+'\\media\\'+namespace+'\\'+browser_path.replace('/','\\')
+            file_path = str(BASE_DIR)+'/media/'+namespace+'/'+browser_path.replace('/','/')     # Corregir esto ...
             type_file = mimetypes.guess_type(file_path)[0]
 
             if browser_path is '/':

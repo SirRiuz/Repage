@@ -11,6 +11,7 @@ from .views import (AuthManager,RegisterManager)
 
 urlpatterns = [
     path('auth/',AuthManager.as_view()),
+    path('auth/<mode>/',AuthManager.as_view()),
     path('register/<mode>/',RegisterManager.as_view())
 ]
 

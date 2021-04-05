@@ -137,18 +137,17 @@ function onShowThreadFiles(data){
                 <div class="box item-container">
                     <a class='a-reg' href='?p=${path}/${item.name}'>${item.name}</a>
                     <br/>
-                    <a  class='a-reg' id="subtitle" >Carpeta - 100 MB</a> 
+                    <a  class='a-reg' id="subtitle" >${item.nameType}</a> 
                 </div>
             </div>
         </div>`
     })
     container.innerHTML = dataHtml
-
     var el = document.getElementsByClassName('item-file')
 
     for(var x=0;x<el.length; x++){
 
-        el[x].addEventListener('contextmenu',(e) => {
+        el[x].children[1].addEventListener('contextmenu',(e) => {
             e.preventDefault();
             const element = document.getElementById('menu-op-popup')
 
@@ -158,7 +157,8 @@ function onShowThreadFiles(data){
 
             window.addEventListener('scroll',(e) => { element.style.display = 'none' })
             window.addEventListener('click',(e) => { element.style.display = 'none' })
-            menuConteoller(element,e.target.children[1].children[0].children)
+            //console.log(element,e.target.children)
+            menuConteoller(element,e.target.children)
         })
 
         el[x].children[1].children[0].addEventListener('click',(e) => {
