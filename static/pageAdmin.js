@@ -44,13 +44,12 @@ function onCreateFile(type){
       Esta funcion es la encargada de la creacion de 
       archivos
     */
-
+   
     var type_ = 'file'
 
     if(type != undefined) {
         type_ = type
     }
-
 
     const buttom = document.getElementById('create-file-btn')
     const formElement = document.getElementById('create-file-modal')
@@ -184,7 +183,9 @@ function onGetFiles(){
     .then(response => {
         if(response.status == "ok"){
             console.log(response)
-            if (response.thread != undefined) { onShowThreadFiles(response.thread) } 
+            if (response.thread != undefined) {
+                onShowThreadFiles(response.thread)
+            } 
             else {onShowFileContend(response.data) }
         } else {
             const container = document.getElementById('aplication-file-container')

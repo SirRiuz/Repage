@@ -44,12 +44,20 @@ class PageController(object):
         browser_path = str(request.get_full_path())
         if not self.__isNotFountPage(browser_path):
             file_path = str(BASE_DIR)+'/media/'+namespace+'/'+browser_path.replace('/','/')     # Corregir esto ...
-            type_file = mimetypes.guess_type(file_path)[0]
-
+            
             if browser_path is '/':
                 file_path = file_path+'index.html'
+
+            
+            type_file = mimetypes.guess_type(file_path)[0]
+
         
             if os.path.exists(file_path) and not os.path.isdir(file_path):
+                
+                if type_file == 'text/html':
+                    print('TYPE ------------------------------------------------> HTML : ' , type_file)
+                    return render(request,file_path)
+
                 file = open(file_path,'rb')
                 return HttpResponse(file,content_type=type_file)
             return self.__getNotFountError(request)

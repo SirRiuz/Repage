@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'accounts',
-    'corsheaders'
+    'corsheaders',
+    'recents'
 ]
 
 MIDDLEWARE = [
@@ -72,7 +73,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ str(BASE_DIR)+'/templates' ],
+        'DIRS': [ str(BASE_DIR)+'/templates',str(BASE_DIR)+'/media' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
