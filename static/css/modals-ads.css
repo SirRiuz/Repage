@@ -1,0 +1,32 @@
+
+
+#modal-container {
+    position: absolute;
+    overflow:hidden;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+
+#screem {
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#modal {
+    overflow: hidden;
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    border-radius: 25px;
+    background: white;
+    left: 35%;
+    top: 15%;
+    z-index: 99999;
+}

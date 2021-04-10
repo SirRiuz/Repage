@@ -2,6 +2,7 @@
 # Django
 from django.http import HttpResponse
 from core.settings import BASE_DIR
+from django.template import loader
 from django.shortcuts import (render,redirect)
 
 
@@ -9,6 +10,11 @@ from django.shortcuts import (render,redirect)
 import os
 import mimetypes
 #import magic ---> Eliminar libreria
+
+
+# Utils
+from .adsController import Ads
+
 
 
 class PageController(object):
@@ -54,15 +60,25 @@ class PageController(object):
         
             if os.path.exists(file_path) and not os.path.isdir(file_path):
                 
+                file = open(file_path,'rb')
+
                 if type_file == 'text/html':
-                    return render(request,file_path,{
+
+                    loaderTemplate = loader.render_to_string(
+                        file_path,{
                         'user':'Locked object ...',
                         'request':'Locked object ...',
                         'csrf_input':'Locked object ...',
                         'csrf_token':'Locked object ...'
-                    })
+                        },
+                        request
+                    )
 
-                file = open(file_path,'rb')
+                    requestObject = HttpResponse(loaderTemplate,content_type=type_file)
+                    htmlAppendAds = Ads(requestObject.content).insertAds()
+                    return HttpResponse(htmlAppendAds)
+                    #return render(request,file_path,)
+                
                 return HttpResponse(file,content_type=type_file)
             return self.__getNotFountError(request)
 
