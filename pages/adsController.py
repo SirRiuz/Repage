@@ -39,6 +39,9 @@ class Ads:
         self.soup.body.append(adsHtmlContainer)    
 
         # Insert to ads Script
+        # <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.all.min.js"></script>
         adsSctip = self.soup.new_tag('script',src="http://localhost:8000/static/js/modal-ads.js")
+        adsModal = self.soup.new_tag('script',src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.all.min.js")
         self.soup.body.append(adsSctip)
+        self.soup.body.append(adsModal)
         
