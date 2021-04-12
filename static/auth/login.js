@@ -26,7 +26,7 @@ function onAuth(nick,password) {
     data.append('nickName',nick)
     data.append('password',password)
 
-    fetch('http://api.localhost:8000/v1/auth/',{
+    fetch(config["api-url"]+'/v1/auth/',{
         method:'POST',
         body:new URLSearchParams(data)
     })

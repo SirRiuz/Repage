@@ -10,7 +10,7 @@ function onCloseSesion(){
 
 function onGetPages() {
     console.log('Token ' + localStorage.getItem('token'))
-    fetch('http://api.localhost:8000/v1/page/',{
+    fetch(config["api-url"]+'/v1/page/',{
         headers:{
             'Authorization':'Token ' + localStorage.getItem('token')
         }

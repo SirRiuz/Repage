@@ -16,7 +16,7 @@ function onUploadFiles(files){
     params.append('page',getPageName())
     params.append('path',path)
 
-    fetch('http://api.localhost:8000/v1/upload/',{
+    fetch(config["api-url"]+'v1/upload/',{
         method:'POST',
         body:params,
         headers:{

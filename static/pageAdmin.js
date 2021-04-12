@@ -63,7 +63,7 @@ function onCreateFile(type){
             e.preventDefault()
             const fileName = form[0].value
             data.append('name',fileName)
-            var url = `http://api.localhost:8000/v1/file/?page=${getPageName()}`
+            var url = `${config["api-url"]}/v1/file/?page=${getPageName()}`
 
             fetch(url,{
                 method:'POST',
@@ -172,7 +172,7 @@ function onGetFiles(){
     var path = window.location.search.split('=')[1]
     var dinamicPath = path
     if(path == undefined){ path='' }
-    var url = `http://api.localhost:8000/v1/file/${path}?page=${getPageName()}`
+    var url = `${config["api-url"]}/v1/file/${path}?page=${getPageName()}`
 
     container.innerHTML = 'LOAD ...'
 
@@ -205,14 +205,14 @@ function onGetFiles(){
 
 
 function onGetData() {
-    fetch('http://api.localhost:8000/v1/page/'+getPageName()+'/',{
+    fetch(config["api-url"]+'/v1/page/'+getPageName()+'/',{
         headers:{'Authorization':'Token ' + localStorage.getItem('token')}
     })
     .then(respnse => respnse.json())
     .then(response => {
         document.title = response.data.name + ' | Repage'
         if(!response.isOwner){
-            window.location = `http://${response.data.name}.localhost:8000`
+            window.location = `http://${response.data.name}.${config["host-name"]}`
         }
         onGetFiles()
         onCreateFile()

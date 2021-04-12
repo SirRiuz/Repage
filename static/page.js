@@ -4,7 +4,7 @@ function onCreatePage(pageName) {
     var params = new FormData()
     params.append('pageName',pageName)
 
-    fetch('http://api.localhost:8000/v1/page/',{
+    fetch(config["api-url"]+'/v1/page/',{
         method:'POST',
         headers:{'Authorization':'Token ' + localStorage.getItem('token')},
         body:new URLSearchParams(params)
