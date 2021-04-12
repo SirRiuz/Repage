@@ -20,9 +20,11 @@ class Ads:
     def insertAds(self) -> str:
 
         if self.soup.html != None:
-            self.__insertHtmlTags()
-            return str(self.soup)
-
+            try:
+                self.__insertHtmlTags()
+                return str(self.soup)
+            except Exception:
+                return 'Html sintax error ...'
         else:
             return ''
 

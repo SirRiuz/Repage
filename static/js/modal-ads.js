@@ -5,4 +5,4 @@ setTimeout(() => {
         showConfirmButton:false,
         showCloseButton:true,
     })
-},2200)
+},2100)
