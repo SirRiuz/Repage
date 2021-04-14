@@ -24,11 +24,12 @@ function onGetPages() {
             response.pages.map((item) => {
                 console.log(item)
                 pages += `
-                <div class='card'>
-                    <div class='content'>
-                        <a href='/page/${item.name}/'>${item.name}</a>
-                    </div>
-                </div>`
+                <div class="col-md-6 col-xs-10">
+                    <div class="box card">
+                    <a id="title-txt" href='/page/${item.name}/'>${item.name}</a>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>                    </div>
+                </div>
+                `
             })
             el.innerHTML = pages
         }
